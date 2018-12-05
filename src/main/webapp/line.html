@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="js/echarts.common.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<body>
+	<div id="box" style='width:600px;height:500px;'></div>
+	
+<script type="text/javascript">
+	//var char = echarts.init(document.getElementById("box"))
+	var box = $('#box');
+	var char = echarts.init(box[0]) 
+	var option = {
+		//设置图标标题
+		title:{
+			text:"Echarts折线图演示",
+			//把标题做成链接
+			link:"http://www.baidu.com",
+			//副标题
+			subtext:"2018"
+		},
+		//设置图例
+		legend:{
+			data:["北京","常德"]
+		},
+		//设置数据标签
+		tooltip:{},
+		//X轴数据
+		xAxis:{
+			data:["苹果","梨子","香蕉","葡萄"]
+		},
+		//Y轴数据
+		yAxis:{},
+		//系列数据
+		series:[{
+			name:"北京",
+			type:"line",
+			data:[200,100,150,80]
+		},{
+			name:"常德",
+			type:"line",
+			data:[80,50,110,180]
+		}]
+	}
+	//配置属性给图表对象
+	char.setOption(option)
+</script>
+</body>
+</html>
